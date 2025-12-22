@@ -308,7 +308,7 @@ src/
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/decentralized-financial-platform.git
+git clone https://github.com/chaimaebouassab4-boop/decentralized-financial-platform.git
 cd decentralized-financial-platform
 ```
 
