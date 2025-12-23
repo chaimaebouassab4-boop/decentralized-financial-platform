@@ -52,20 +52,22 @@ export default function AuthPage() {
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8 items-center">
           
           {/* Left Side - Info */}
+         {/* Left Side - Info */}
           <div className="hidden lg:block space-y-8 animate-slide-in-left">
-            <Link href="/" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors group">
+            <Link href="/" className="inline-flex items-center gap-2 text-slate-600 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors group">
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
               <span>Back to Home</span>
             </Link>
             
             <div className="space-y-4">
-              <h1 className="text-5xl font-bold text-white leading-tight">
+              <h1 className="text-5xl font-bold text-slate-900 dark:text-white leading-tight">
                 Welcome to the
-                <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
                   Future of Finance
                 </span>
               </h1>
-              <p className="text-xl text-slate-400">
+              {/* FIXED: Readable dark gray in Light Mode */}
+              <p className="text-xl text-slate-600 dark:text-slate-400">
                 Connect your wallet or sign in to access decentralized financial services
               </p>
             </div>
@@ -80,7 +82,8 @@ export default function AuthPage() {
                     </svg>
                   ), 
                   text: "Bank-grade security",
-                  color: "cyan"
+                  // Dynamic colors: Darker for light mode, brighter for dark mode
+                  colorClass: "text-cyan-600 dark:text-cyan-400" 
                 },
                 { 
                   icon: (
@@ -89,7 +92,7 @@ export default function AuthPage() {
                     </svg>
                   ), 
                   text: "Instant transactions",
-                  color: "purple"
+                  colorClass: "text-purple-600 dark:text-purple-400"
                 },
                 { 
                   icon: (
@@ -98,7 +101,7 @@ export default function AuthPage() {
                     </svg>
                   ), 
                   text: "Global access 24/7",
-                  color: "blue"
+                  colorClass: "text-blue-600 dark:text-blue-400"
                 },
                 { 
                   icon: (
@@ -107,33 +110,25 @@ export default function AuthPage() {
                     </svg>
                   ), 
                   text: "Blockchain verified",
-                  color: "green"
+                  colorClass: "text-green-600 dark:text-green-400"
                 }
               ].map((feature, i) => (
                 <div 
                   key={i}
-                  className="flex items-center gap-4 text-slate-300 animate-fade-in group hover:translate-x-2 transition-transform duration-300"
+                  className="flex items-center gap-4 text-slate-600 dark:text-slate-300 animate-fade-in group hover:translate-x-2 transition-transform duration-300"
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
                   <div className={`
                     w-12 h-12 rounded-xl flex items-center justify-center
-                    bg-gradient-to-br ${
-                      feature.color === 'cyan' ? 'from-cyan-500/10 to-cyan-600/10 text-cyan-400 group-hover:from-cyan-500/20 group-hover:to-cyan-600/20' :
-                      feature.color === 'purple' ? 'from-purple-500/10 to-purple-600/10 text-purple-400 group-hover:from-purple-500/20 group-hover:to-purple-600/20' :
-                      feature.color === 'blue' ? 'from-blue-500/10 to-blue-600/10 text-blue-400 group-hover:from-blue-500/20 group-hover:to-blue-600/20' :
-                      'from-green-500/10 to-green-600/10 text-green-400 group-hover:from-green-500/20 group-hover:to-green-600/20'
-                    }
-                    border ${
-                      feature.color === 'cyan' ? 'border-cyan-500/20' :
-                      feature.color === 'purple' ? 'border-purple-500/20' :
-                      feature.color === 'blue' ? 'border-blue-500/20' :
-                      'border-green-500/20'
-                    }
+                    bg-white dark:bg-slate-800
+                    fancy-border
+                    shadow-sm dark:shadow-none
+                    ${feature.colorClass}
                     transition-all duration-300 group-hover:scale-110 group-hover:rotate-3
                   `}>
                     {feature.icon}
                   </div>
-                  <span className="font-medium group-hover:text-white transition-colors duration-300">
+                  <span className="font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300">
                     {feature.text}
                   </span>
                 </div>
@@ -146,7 +141,7 @@ export default function AuthPage() {
                 {[...Array(4)].map((_, i) => (
                   <div 
                     key={i}
-                    className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg animate-pulse-slow"
+                    className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg animate-pulse-slow shadow-lg shadow-cyan-500/20"
                     style={{ 
                       animationDelay: `${i * 200}ms`,
                       opacity: 0.6 + (i * 0.1)
@@ -162,23 +157,23 @@ export default function AuthPage() {
             <div className="bg-slate-900/50 backdrop-blur-xl border border-slate-800 rounded-2xl p-8 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500">
               
               {/* Toggle Login/Register */}
-              <div className="flex gap-2 mb-8 p-1 bg-slate-800/50 rounded-lg">
+              <div className="flex gap-2 mb-8 p-1 rounded-lg fancy-border bg-white/60 dark:bg-slate-800/50">
                 <button
                   onClick={() => setIsLogin(true)}
-                  className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-300 ${
-                    isLogin 
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50' 
-                      : 'text-slate-400 hover:text-white'
+                  className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-300 flex items-center justify-center text-center ${
+                    isLogin
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-400/20' 
+                      : 'text-slate-600 dark:text-slate-300 hover:text-white hover:scale-[1.02]'
                   }`}
                 >
                   Sign In
                 </button>
                 <button
                   onClick={() => setIsLogin(false)}
-                  className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-300 ${
-                    !isLogin 
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50' 
-                      : 'text-slate-400 hover:text-white'
+                  className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-300 flex items-center justify-center text-center ${
+                    !isLogin
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/50 ring-1 ring-cyan-400/20' 
+                      : 'text-slate-600 dark:text-slate-300 hover:text-white hover:scale-[1.02]'
                   }`}
                 >
                   Sign Up
@@ -232,7 +227,7 @@ export default function AuthPage() {
               {/* Email/Password Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-sm text-slate-400">Email</label>
+                  <label className="text-sm text-slate-900">Email</label>
                   <div className="relative group">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 group-focus-within:text-cyan-400 transition-colors" />
                     <Input
@@ -240,14 +235,14 @@ export default function AuthPage() {
                       placeholder="your@email.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="pl-10 bg-slate-800/50 border-slate-700 focus:border-cyan-500 focus:ring-cyan-500/20 text-white placeholder:text-slate-500 h-12 rounded-lg transition-all duration-300"
+                      className="pl-10 bg-slate-50 border-slate-700 focus:border-cyan-500 focus:ring-cyan-500/20 text-white placeholder:text-slate-500 h-12 rounded-lg transition-all duration-300"
                       required
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm text-slate-400">Password</label>
+                  <label className="text-sm text-slate-900">Password</label>
                   <div className="relative group">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 group-focus-within:text-cyan-400 transition-colors" />
                     <Input
@@ -255,7 +250,7 @@ export default function AuthPage() {
                       placeholder="••••••••"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="pl-10 pr-10 bg-slate-800/50 border-slate-700 focus:border-cyan-500 focus:ring-cyan-500/20 text-white placeholder:text-slate-500 h-12 rounded-lg transition-all duration-300"
+                      className="pl-10 pr-10 bg-slate-50 border-slate-700 focus:border-cyan-500 focus:ring-cyan-500/20 text-white placeholder:text-slate-500 h-12 rounded-lg transition-all duration-300"
                       required
                     />
                     <button
@@ -270,8 +265,8 @@ export default function AuthPage() {
 
                 {isLogin && (
                   <div className="flex items-center justify-between text-sm">
-                    <label className="flex items-center gap-2 text-slate-400 cursor-pointer">
-                      <input type="checkbox" className="rounded border-slate-700 bg-slate-800/50 text-cyan-500 focus:ring-cyan-500/20" />
+                    <label className="flex items-center gap-2 text-slate-900 cursor-pointer">
+                      <input type="checkbox" className="rounded border-slate-700 bg-slate-50 text-cyan-500 focus:ring-cyan-500/20" />
                       Remember me
                     </label>
                     <a href="#" className="text-cyan-400 hover:text-cyan-300 transition-colors">
@@ -297,7 +292,7 @@ export default function AuthPage() {
               </form>
 
               {/* Footer */}
-              <p className="mt-6 text-center text-sm text-slate-400">
+              <p className="mt-6 text-center text-sm text-slate-900">
                 {isLogin ? "Don't have an account? " : "Already have an account? "}
                 <button
                   onClick={() => setIsLogin(!isLogin)}

@@ -373,3 +373,27 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+
+/* Modern gradient / neon-accent border to replace flat gray borders */
+.fancy-border {
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--card), var(--card)), linear-gradient(90deg, rgba(34,211,238,0.12), rgba(99,102,241,0.06), rgba(14,165,233,0.12));
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+.fancy-border:hover {
+  box-shadow: 0 10px 30px rgba(6,182,212,0.06);
+  transform: translateY(-2px);
+}
+.dark .fancy-border {
+  background-image: linear-gradient(var(--card), var(--card)), linear-gradient(90deg, rgba(34,211,238,0.14), rgba(99,102,241,0.04), rgba(14,165,233,0.12));
+}
+
+/* Light-mode specific container styling: applies only when `.dark` is NOT present on <body> */
+body:not(.dark) > div.min-h-screen > main > div > div > div {
+  background-color: #f8fafc; /* slate-50 */
+  border: 1px solid #e2e8f0; /* slate-200 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
