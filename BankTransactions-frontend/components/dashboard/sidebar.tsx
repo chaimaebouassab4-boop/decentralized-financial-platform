@@ -18,6 +18,8 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useAuth } from "@/contexts/auth-context"
+import { Badge } from "@/components/ui/badge"
 
 const mainLinks = [
   { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
@@ -37,6 +39,7 @@ const secondaryLinks = [
 
 export function DashboardSidebar() {
   const pathname = usePathname()
+  const { user, authMode, logout } = useAuth()
 
   return (
     <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col border-r border-border bg-sidebar">
@@ -55,6 +58,23 @@ export function DashboardSidebar() {
           </span>
         </Link>
       </div>
+
+      {authMode === "guest" && (
+        <div className="mx-4 mt-4 rounded-lg bg-amber-500/10 border border-amber-500/20 p-3">
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30">
+              Demo Mode
+            </Badge>
+          </div>
+          <p className="mt-1.5 text-xs text-muted-foreground">
+            You&apos;re viewing sample data.{" "}
+            <Link href="/auth" className="text-primary hover:underline">
+              Sign in
+            </Link>{" "}
+            for full access.
+          </p>
+        </div>
+      )}
 
       {/* Main Navigation */}
       <nav className="flex-1 overflow-y-auto px-4 py-6">
@@ -115,9 +135,20 @@ export function DashboardSidebar() {
           <span className="text-xs text-muted-foreground">Theme</span>
           <ThemeToggle />
         </div>
-        <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-destructive transition-colors hover:bg-destructive/10">
+
+        {authMode === "authenticated" && user && (
+          <div className="mb-3 p-2 rounded-lg bg-sidebar-accent/50">
+            <p className="text-sm font-medium text-sidebar-foreground truncate">{user.name}</p>
+            <p className="text-xs text-muted-foreground truncate">{user.email || user.walletAddress}</p>
+          </div>
+        )}
+
+        <button
+          onClick={logout}
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-destructive transition-colors hover:bg-destructive/10"
+        >
           <LogOut className="h-4 w-4" />
-          Log Out
+          {authMode === "guest" ? "Exit Demo" : "Log Out"}
         </button>
       </div>
     </aside>

@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Bell, Search, ChevronDown, Wallet, Copy, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,10 +13,16 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { useAuth } from "@/contexts/auth-context"
+import Link from "next/link"
 
 export function DashboardHeader() {
-  const [walletConnected] = useState(true)
-  const walletAddress = "0x742d...44e8"
+  const { user, authMode, logout } = useAuth()
+
+  const isGuest = authMode === "guest"
+  const walletAddress = user?.walletAddress || "0x742d...44e8"
+  const displayName = user?.name || "Guest User"
+  const displayEmail = user?.email || "Demo Account"
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background/95 px-6 backdrop-blur-sm">
@@ -39,8 +44,14 @@ export function DashboardHeader() {
           <span className="text-xs font-medium text-foreground">Ethereum Mainnet</span>
         </div>
 
-        {/* Wallet Button */}
-        {walletConnected ? (
+        {isGuest ? (
+          <Link href="/auth">
+            <Button size="sm" className="gap-2">
+              <Wallet className="h-4 w-4" />
+              Sign In
+            </Button>
+          </Link>
+        ) : (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="gap-2 bg-secondary border-border">
@@ -64,8 +75,6 @@ export function DashboardHeader() {
               <DropdownMenuItem className="text-destructive">Disconnect</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        ) : (
-          <Button size="sm">Connect Wallet</Button>
         )}
 
         {/* Notifications */}
@@ -99,12 +108,12 @@ export function DashboardHeader() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="flex items-center gap-2 px-2">
               <Avatar className="h-8 w-8">
-                <AvatarImage src="/diverse-avatars.png" />
-                <AvatarFallback>JD</AvatarFallback>
+                <AvatarImage src={user?.avatar || "/placeholder.svg?height=32&width=32&query=avatar"} />
+                <AvatarFallback>{displayName.slice(0, 2).toUpperCase()}</AvatarFallback>
               </Avatar>
               <div className="hidden text-left md:block">
-                <p className="text-sm font-medium">John Doe</p>
-                <p className="text-xs text-muted-foreground">Pro Account</p>
+                <p className="text-sm font-medium">{displayName}</p>
+                <p className="text-xs text-muted-foreground">{isGuest ? "Demo Mode" : displayEmail}</p>
               </div>
               <ChevronDown className="h-3 w-3" />
             </Button>
@@ -114,9 +123,19 @@ export function DashboardHeader() {
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
+            {!isGuest && <DropdownMenuItem>Billing</DropdownMenuItem>}
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive">Log out</DropdownMenuItem>
+            {isGuest ? (
+              <DropdownMenuItem asChild>
+                <Link href="/auth" className="text-primary">
+                  Sign In
+                </Link>
+              </DropdownMenuItem>
+            ) : (
+              <DropdownMenuItem onClick={logout} className="text-destructive">
+                Log out
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
