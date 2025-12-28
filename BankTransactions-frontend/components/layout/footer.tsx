@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Logo } from "@/components/layout/logo"
 
 const footerLinks = {
   platform: [
@@ -28,11 +29,8 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-sm font-bold text-primary-foreground">FC</span>
-              </div>
-              <span className="text-lg font-semibold text-foreground">FinChain</span>
+            <Link href="/">
+              <Logo size="sm" showText={true} />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Decentralized financial services powered by blockchain technology and modern cloud infrastructure.
@@ -93,7 +91,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} FinChain. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground dark:text-white">© {new Date().getFullYear()} Forge Finance. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
               Privacy Policy

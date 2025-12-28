@@ -9,6 +9,7 @@ import { FloatingShapes } from "@/components/animations/floating-shapes"
 import { BlockchainVisualization } from "@/components/animations/blockchain-visualization"
 import { Counter } from "@/components/animations/counter"
 import { MotionWrapper } from "@/components/animations/motion-wrapper"
+import { Logo } from "@/components/layout/logo"
 
 export function HeroSection() {
   return (
@@ -27,10 +28,17 @@ export function HeroSection() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
+          {/* Logo */}
           <MotionWrapper delay={0}>
+            <div className="mb-8 flex justify-center">
+              <Logo size="lg" showText={true} />
+            </div>
+          </MotionWrapper>
+
+          {/* Badge */}
+          <MotionWrapper delay={0.05}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 backdrop-blur-sm">
-              <motion.span 
+              <motion.span
                 className="h-2 w-2 rounded-full bg-emerald-500"
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}

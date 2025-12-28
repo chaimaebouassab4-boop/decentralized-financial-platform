@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Wallet, Sparkles, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Logo } from "@/components/layout/logo"
+import { useTheme } from "@/components/theme-provider"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,6 +20,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeLink, setActiveLink] = useState("/")
+  const { theme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,33 +50,8 @@ export function Navbar() {
         <nav className="relative">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <motion.div 
-                className="relative" 
-                whileHover={{ scale: 1.05 }} 
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/25">
-                  <span className="text-sm font-bold text-white">FC</span>
-                </div>
-                <motion.div
-                  className="absolute -top-1 -right-1"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                >
-                  <Sparkles className="h-3 w-3 text-cyan-400" />
-                </motion.div>
-              </motion.div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-tight text-foreground">FinChain</span>
-                <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Web3 Finance</span>
-              </div>
+            <Link href="/" className="group">
+              <Logo size="md" showText={true} />
             </Link>
 
             {/* Desktop Navigation */}
@@ -132,11 +110,19 @@ export function Navbar() {
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity" />
                 <Button
                   size="sm"
-                  className="relative rounded-full px-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0 shadow-lg shadow-cyan-500/25"
+                  className="relative rounded-full px-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 dark:from-cyan-500 dark:to-blue-600 dark:hover:from-cyan-600 dark:hover:to-blue-700 border-0 shadow-lg shadow-cyan-500/25"
                 >
-                  <Wallet className="mr-2 h-4 w-4" />
-                  <span>Connect</span>
-                  <ChevronRight className="ml-1 h-3 w-3" />
+                  <Wallet className={`mr-2 h-4 w-4 transition-colors ${
+                    theme === "dark" 
+                      ? "text-white" 
+                      : "text-cyan-50"
+                  }`} />
+                  <span className="text-white">Connect</span>
+                  <ChevronRight className={`ml-1 h-3 w-3 transition-colors ${
+                    theme === "dark" 
+                      ? "text-white" 
+                      : "text-cyan-50"
+                  }`} />
                 </Button>
               </motion.div>
             </div>
