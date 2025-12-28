@@ -1,36 +1,27 @@
-# 🚀 Decentralized Financial Platform
+# 🔥 Forge Finance
 
-> **Enterprise-grade FinTech platform combining microservices architecture with blockchain technology for traditional and decentralized financial services.**
+> **Enterprise-grade FinTech platform forging the future of finance by combining microservices architecture with blockchain technology for traditional and decentralized financial services.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-14+-black)](https://nextjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green)](https://fastapi.tiangolo.com/)
-[![Solidity](https://img.shields.io/badge/Solidity-0.8+-purple)](https://soliditylang.org/)
+<div align="center">
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Solidity](https://img.shields.io/badge/Solidity-0.8+-363636?style=for-the-badge&logo=solidity&logoColor=white)](https://soliditylang.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Why This Project](#-why-this-project-exists)
-- [Key Features](#-key-features)
-- [Architecture](#-architecture-overview)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Security](#-security--best-practices)
-- [Roadmap](#-development-roadmap)
-- [Contributing](#-contributing)
-- [Author](#-author)
+</div>
 
 ---
 
 ## 🎯 Overview
 
-The **Decentralized Financial Platform** is a comprehensive FinTech solution that bridges traditional banking services with Web3 blockchain technology. Built with a microservices architecture, this platform enables seamless financial transactions, cryptocurrency management, and decentralized payment processing through smart contracts.
+**Forge Finance** is a comprehensive FinTech solution that bridges traditional banking services with Web3 blockchain technology. Built with a microservices architecture, this platform enables seamless financial transactions, cryptocurrency management, and decentralized payment processing through smart contracts.
 
-### What Makes This Special
+### 💡 What Makes This Special
 
 This isn't just another crypto dashboard—it's a **production-ready financial ecosystem** that demonstrates:
 
@@ -48,10 +39,10 @@ This isn't just another crypto dashboard—it's a **production-ready financial e
 ### Business Problem
 
 Traditional financial systems and blockchain solutions operate in silos. Users need to switch between platforms for:
-- Fiat currency transactions
-- Cryptocurrency management
-- Smart contract interactions
-- Financial analytics
+- 💵 Fiat currency transactions
+- 💰 Cryptocurrency management
+- 📝 Smart contract interactions
+- 📊 Financial analytics
 
 ### Our Solution
 
@@ -64,10 +55,10 @@ A **unified platform** that provides:
 
 ### Target Audience
 
-- Financial institutions exploring blockchain integration
-- FinTech startups building hybrid payment solutions
-- Enterprise clients requiring secure transaction management
-- Developers learning Web3 and microservices architecture
+- 🏦 Financial institutions exploring blockchain integration
+- 🚀 FinTech startups building hybrid payment solutions
+- 🏢 Enterprise clients requiring secure transaction management
+- 👨‍💻 Developers learning Web3 and microservices architecture
 
 ---
 
@@ -75,83 +66,83 @@ A **unified platform** that provides:
 
 ### 🏦 Traditional FinTech Core
 
-- **Transaction Management**
-  - Payment processing and transfers
-  - Wire transfers between accounts
-  - Transaction history and tracking
-  - Multi-currency support
+**Transaction Management**
+- Payment processing and transfers
+- Wire transfers between accounts
+- Transaction history and tracking
+- Multi-currency support
 
-- **Account Management**
-  - User authentication and authorization
-  - Role-based access control (RBAC)
-  - Profile and settings management
-  - KYC/AML compliance ready
+**Account Management**
+- User authentication and authorization
+- Role-based access control (RBAC)
+- Profile and settings management
+- KYC/AML compliance ready
 
-- **Financial Analytics**
-  - Real-time balance tracking
-  - Spending behavior analysis
-  - Cash flow visualization
-  - Custom financial reports
+**Financial Analytics**
+- Real-time balance tracking
+- Spending behavior analysis
+- Cash flow visualization
+- Custom financial reports
 
 ### ⛓️ Blockchain & Web3
 
-- **Smart Contract Integration**
-  - Automated payment execution
-  - Cryptocurrency staking mechanisms
-  - Token transfers and swaps
-  - Digital asset management
+**Smart Contract Integration**
+- Automated payment execution
+- Cryptocurrency staking mechanisms
+- Token transfers and swaps
+- Digital asset management
 
-- **MetaMask Wallet**
-  - Seamless wallet connection
-  - Transaction signing
-  - Multi-chain support preparation
-  - Gas fee estimation
+**MetaMask Wallet**
+- Seamless wallet connection
+- Transaction signing
+- Multi-chain support preparation
+- Gas fee estimation
 
-- **Blockchain Analytics**
-  - Real-time transaction monitoring
-  - Token movement tracking
-  - Smart contract interaction history
-  - On-chain data visualization
+**Blockchain Analytics**
+- Real-time transaction monitoring
+- Token movement tracking
+- Smart contract interaction history
+- On-chain data visualization
 
 ### 📊 Dashboard & Visualization
 
-- **Interactive UI**
-  - Modern, responsive design
-  - Dark mode optimized for FinTech
-  - Real-time data updates
-  - Mobile-first approach
+**Interactive UI**
+- Modern, responsive design
+- Dark mode optimized for FinTech
+- Real-time data updates
+- Mobile-first approach
 
-- **Data Visualization**
-  - Transaction volume charts
-  - Portfolio performance graphs
-  - Blockchain activity heatmaps
-  - Custom metric dashboards
+**Data Visualization**
+- Transaction volume charts
+- Portfolio performance graphs
+- Blockchain activity heatmaps
+- Custom metric dashboards
 
 ### 🔧 DevOps & Infrastructure
 
-- **Microservices Architecture**
-  - Independent, scalable services
-  - REST API communication
-  - Event-driven with Kafka
-  - API Gateway orchestration
+**Microservices Architecture**
+- Independent, scalable services
+- REST API communication
+- Event-driven with Kafka
+- API Gateway orchestration
 
-- **Cloud Deployment**
-  - AWS EKS (Kubernetes orchestration)
-  - Docker containerization
-  - Terraform infrastructure as code
-  - Auto-scaling capabilities
+**Cloud Deployment**
+- AWS EKS (Kubernetes orchestration)
+- Docker containerization
+- Terraform infrastructure as code
+- Auto-scaling capabilities
 
-- **CI/CD Pipeline**
-  - Automated testing
-  - Continuous integration with Jenkins/GitLab CI
-  - Blue-green deployment
-  - Automated rollbacks
+**CI/CD Pipeline**
+- Automated testing
+- Continuous integration with Jenkins/GitLab CI
+- Blue-green deployment
+- Automated rollbacks
 
-- **Monitoring & Observability**
-  - Prometheus metrics collection
-  - Grafana dashboards
-  - AWS CloudWatch integration
-  - Distributed tracing
+**Monitoring & Observability**
+- Prometheus metrics collection
+- Grafana dashboards
+- AWS CloudWatch integration
+- Distributed tracing
 
 ---
 
@@ -213,7 +204,7 @@ A **unified platform** that provides:
 - Wallet connection and management
 - Role-based permissions
 
-#### 4. **Analytics Service** (Planned)
+#### 4. **Analytics Service**
 - Aggregates transaction data
 - Generates financial reports
 - Machine learning for fraud detection
@@ -246,6 +237,20 @@ src/
 ## 🛠️ Tech Stack
 
 ### Frontend
+<div align="left">
+  
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-181717?style=for-the-badge&logo=react&logoColor=white)
+![React Query](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+
+</div>
+
+**Key Technologies:**
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript 5.0+
 - **Styling**: Tailwind CSS + shadcn/ui
@@ -254,7 +259,22 @@ src/
 - **Charts**: Recharts + Chart.js
 - **Animations**: Framer Motion
 
+---
+
 ### Backend (Microservices)
+<div align="left">
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=python&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+
+</div>
+
+**Key Technologies:**
 - **Framework**: FastAPI (Python 3.11+)
 - **ORM**: SQLAlchemy
 - **Database**: PostgreSQL (AWS RDS)
@@ -262,14 +282,45 @@ src/
 - **Message Broker**: Apache Kafka
 - **API Gateway**: Kong / Nginx
 
+---
+
 ### Blockchain
+<div align="left">
+
+![Solidity](https://img.shields.io/badge/Solidity-0.8+-363636?style=for-the-badge&logo=solidity&logoColor=white)
+![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)
+![Web3.js](https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=web3.js&logoColor=white)
+![Hardhat](https://img.shields.io/badge/Hardhat-FFF100?style=for-the-badge&logo=hardhat&logoColor=black)
+![MetaMask](https://img.shields.io/badge/MetaMask-F6851B?style=for-the-badge&logo=metamask&logoColor=white)
+![Ethers.js](https://img.shields.io/badge/Ethers.js-2535A0?style=for-the-badge&logo=ethereum&logoColor=white)
+
+</div>
+
+**Key Technologies:**
 - **Smart Contracts**: Solidity 0.8+
 - **Web3 Library**: Web3.py / Ethers.js
 - **Blockchain**: Ethereum (Mainnet/Testnets)
 - **Wallet Integration**: MetaMask
 - **Development**: Hardhat / Truffle
 
+---
+
 ### DevOps & Infrastructure
+<div align="left">
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white)
+
+</div>
+
+**Key Technologies:**
 - **Containerization**: Docker
 - **Orchestration**: Kubernetes (AWS EKS)
 - **IaC**: Terraform
@@ -278,17 +329,86 @@ src/
 - **Monitoring**: Prometheus + Grafana
 - **Logging**: ELK Stack (Elasticsearch, Logstash, Kibana)
 
+---
+
 ### Data Analysis
+<div align="left">
+
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+
+</div>
+
+**Key Technologies:**
 - **Libraries**: pandas, numpy
 - **Visualization**: Matplotlib, Seaborn, Plotly
 - **Processing**: Apache Spark (for large datasets)
 
+---
+
 ### Security
+<div align="left">
+
+![OAuth2](https://img.shields.io/badge/OAuth2-EB5424?style=for-the-badge&logo=auth0&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)
+![AWS IAM](https://img.shields.io/badge/AWS_IAM-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Let's Encrypt](https://img.shields.io/badge/Let's_Encrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white)
+
+</div>
+
+**Key Technologies:**
 - **Authentication**: OAuth2, JWT
 - **API Security**: Rate limiting, CORS, API keys
 - **Cloud Security**: AWS IAM, VPC, Security Groups
 - **Secrets Management**: AWS Secrets Manager
 - **Wallet Security**: MetaMask signature verification
+
+---
+
+## 📊 Technology Overview
+
+<div align="center">
+
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | Next.js, TypeScript, React, Tailwind CSS |
+| **Backend** | FastAPI, Python, PostgreSQL, Redis, Kafka |
+| **Blockchain** | Solidity, Ethereum, Web3.js, Hardhat, MetaMask |
+| **DevOps** | Docker, Kubernetes, Terraform, AWS, Jenkins |
+| **Monitoring** | Prometheus, Grafana, ELK Stack |
+| **Security** | OAuth2, JWT, AWS IAM, TLS/SSL |
+
+</div>
+
+---
+
+## 🌟 Why These Technologies?
+
+### **Frontend: Next.js + TypeScript**
+- ✅ Server-side rendering for better SEO and performance
+- ✅ Type safety prevents runtime errors
+- ✅ Built-in API routes reduce complexity
+- ✅ Excellent developer experience
+
+### **Backend: FastAPI Microservices**
+- ✅ High performance (async Python)
+- ✅ Automatic API documentation (Swagger/OpenAPI)
+- ✅ Type hints for better code quality
+- ✅ Easy to scale horizontally
+
+### **Blockchain: Ethereum + Solidity**
+- ✅ Most mature smart contract platform
+- ✅ Large developer ecosystem
+- ✅ MetaMask integration for 30M+ users
+- ✅ EVM compatibility for future multi-chain support
+
+### **DevOps: Kubernetes + AWS**
+- ✅ Industry-standard container orchestration
+- ✅ Auto-scaling and self-healing
+- ✅ Multi-cloud portability
+- ✅ Robust monitoring and logging
 
 ---
 
@@ -308,8 +428,8 @@ src/
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/chaimaebouassab4-boop/decentralized-financial-platform.git
-cd decentralized-financial-platform
+git clone https://github.com/yourusername/forge-finance.git
+cd forge-finance
 ```
 
 #### 2. Frontend Setup
@@ -386,7 +506,7 @@ AWS_REGION=us-east-1
 ## 📁 Project Structure
 
 ```
-decentralized-financial-platform/
+forge-finance/
 ├── frontend/                   # Next.js frontend application
 │   ├── src/
 │   │   ├── app/               # App router pages
@@ -416,16 +536,17 @@ decentralized-financial-platform/
 ├── infrastructure/             # Infrastructure as Code
 │   ├── terraform/             # Terraform configurations
 │   ├── kubernetes/            # K8s manifests
-│   └── docker/                # Dockerfiles
-│
-├── ci-cd/                      # CI/CD pipelines
-│   ├── jenkins/               # Jenkins pipeline
-│   └── gitlab-ci.yml          # GitLab CI configuration
+│   ├── docker/                # Dockerfiles
+│   └── monitoring/            # Prometheus & Grafana
 │
 ├── docs/                       # Documentation
 │   ├── api/                   # API documentation
 │   ├── architecture/          # Architecture diagrams
-│   └── deployment/            # Deployment guides
+│   ├── deployment/            # Deployment guides
+│   └── blockchain/            # Smart contract docs
+│
+├── .github/                    # GitHub workflows
+│   └── workflows/             # CI/CD pipelines
 │
 └── docker-compose.yml          # Local development stack
 ```
@@ -464,43 +585,77 @@ decentralized-financial-platform/
 - ✅ Secrets management with AWS Secrets Manager
 - ✅ Regular security updates
 
-### Code Quality
-- ✅ ESLint + Prettier (frontend)
-- ✅ Pylint + Black (backend)
-- ✅ Pre-commit hooks
-- ✅ Automated security scanning
+---
+
+## 🧪 Testing
+
+### Unit Tests
+```bash
+# Backend tests
+cd backend
+pytest tests/unit/
+
+# Frontend tests
+cd frontend
+npm run test
+```
+
+### Integration Tests
+```bash
+# API integration tests
+cd backend
+pytest tests/integration/
+
+# E2E tests
+cd frontend
+npm run test:e2e
+```
+
+### Smart Contract Tests
+```bash
+cd blockchain
+npx hardhat test
+npx hardhat coverage
+```
 
 ---
 
-## 🗺️ Development Roadmap
+## 📚 Documentation
 
-### ✅ Phase 1: Foundation (Completed)
-- [x] Project architecture design
-- [x] Frontend UI/UX implementation
-- [x] Basic microservices setup
-- [x] Smart contract development
-- [x] Local development environment
+- **[API Documentation](docs/api/README.md)** - Complete API reference with Swagger/OpenAPI
+- **[Architecture Guide](docs/architecture/README.md)** - System design and architecture decisions
+- **[Deployment Guide](docs/deployment/README.md)** - Step-by-step deployment instructions
+- **[Smart Contracts](docs/blockchain/README.md)** - Contract documentation and security audits
+- **[User Guide](docs/user-guide/README.md)** - End-user documentation
 
-### 🚧 Phase 2: Core Features (In Progress)
-- [x] User authentication system
-- [x] Transaction management
-- [ ] MetaMask wallet integration
-- [ ] Blockchain transaction processing
-- [ ] Real-time dashboard updates
+---
 
-### 📋 Phase 3: Advanced Features (Planned)
-- [ ] Multi-chain support (Polygon, BSC)
-- [ ] DeFi protocol integration
-- [ ] Advanced analytics and ML models
-- [ ] Mobile application (React Native)
-- [ ] Automated trading bots
+## 🚀 Deployment
 
-### 🔮 Phase 4: Enterprise Features (Future)
-- [ ] Institutional wallet support
-- [ ] Compliance reporting tools
-- [ ] White-label solution
-- [ ] API marketplace
-- [ ] Advanced fraud detection
+### Local Development
+```bash
+docker-compose up -d
+```
+
+### AWS Deployment (Kubernetes)
+```bash
+# Configure AWS credentials
+aws configure
+
+# Deploy infrastructure
+cd infrastructure/terraform
+terraform init
+terraform apply
+
+# Deploy application
+kubectl apply -f infrastructure/kubernetes/
+```
+
+### CI/CD Pipeline
+The project uses GitHub Actions for automated deployments:
+- **Push to `develop`**: Deploy to staging
+- **Push to `main`**: Deploy to production
+- Automated testing on all PRs
 
 ---
 
@@ -531,23 +686,15 @@ decentralized-financial-platform/
 
 ---
 
-## 📚 Documentation
-
-- [API Documentation](docs/api/README.md) - Complete API reference
-- [Architecture Guide](docs/architecture/README.md) - System design deep-dive
-- [Deployment Guide](docs/deployment/README.md) - Step-by-step deployment
-- [Smart Contract Docs](docs/blockchain/README.md) - Contract specifications
-- [Contributing Guide](CONTRIBUTING.md) - How to contribute
-
----
-
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on:
-- Code of conduct
-- Development workflow
-- Pull request process
-- Coding standards
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting PRs.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
@@ -557,11 +704,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 👩‍💻 Author
+## 👨‍💻 Author
 
-**CHAIMAE**  
+**CHAIMAE BOUASSAB**  
 *Master's Student — IT Security & Big Data*
 
+[![GitHub](https://img.shields.io/badge/GitHub-chaimaebouassab4--boop-181717?style=for-the-badge&logo=github)](https://github.com/chaimaebouassab4-boop)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
 
 ---
 
@@ -575,12 +725,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📊 Project Stats
+## 📈 Project Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/decentralized-financial-platform?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/decentralized-financial-platform?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/decentralized-financial-platform)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/decentralized-financial-platform)
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/yourusername/forge-finance?style=social)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/forge-finance?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/yourusername/forge-finance?style=social)
+
+</div>
 
 ---
 
@@ -588,6 +741,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **⭐ If you find this project useful, please consider giving it a star! ⭐**
 
-Made with ❤️ and ☕ by passionate developers
+Made with ❤️ and ☕ by CHAIMAE BOUASSAB
 
 </div>
