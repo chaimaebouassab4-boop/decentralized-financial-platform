@@ -110,18 +110,22 @@ export function Navbar() {
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity" />
                 <Button
                   size="sm"
-                  className="relative rounded-full px-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 dark:from-cyan-500 dark:to-blue-600 dark:hover:from-cyan-600 dark:hover:to-blue-700 border-0 shadow-lg shadow-cyan-500/25"
+                  className="relative rounded-full px-5 bg-gradient-to-r from-cyan-200 to-blue-300 hover:from-cyan-300 hover:to-blue-400 dark:from-cyan-500 dark:to-blue-600 dark:hover:from-cyan-600 dark:hover:to-blue-700 border-0 shadow-lg shadow-cyan-500/25"
                 >
                   <Wallet className={`mr-2 h-4 w-4 transition-colors ${
                     theme === "dark" 
                       ? "text-white" 
-                      : "text-cyan-50"
+                      : "text-black"
                   }`} />
-                  <span className="text-white">Connect</span>
+                  <span className={`transition-colors ${
+                    theme === "dark" 
+                      ? "text-white" 
+                      : "text-black"
+                  }`}>Connect</span>
                   <ChevronRight className={`ml-1 h-3 w-3 transition-colors ${
                     theme === "dark" 
                       ? "text-white" 
-                      : "text-cyan-50"
+                      : "text-black"
                   }`} />
                 </Button>
               </motion.div>

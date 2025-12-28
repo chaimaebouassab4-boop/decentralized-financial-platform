@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 const contracts = [
   {
-    name: "FinChainToken",
+    name: "ForgeFinanceToken",
     address: "0x1234...5678",
     status: "deployed",
     network: "Ethereum",

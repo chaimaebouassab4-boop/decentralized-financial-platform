@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useAuth } from "@/contexts/auth-context"
 import { Badge } from "@/components/ui/badge"
+import { Logo } from "@/components/layout/logo"
 
 const mainLinks = [
   { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
@@ -44,18 +45,11 @@ export function DashboardSidebar() {
   return (
     <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col border-r border-border bg-sidebar">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-2 border-b border-sidebar-border px-6">
-        <Link href="/" className="flex items-center gap-2 group">
-          <motion.div
-            className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary"
-            whileHover={{ rotate: 360, scale: 1.1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-sm font-bold text-sidebar-primary-foreground">FC</span>
-          </motion.div>
-          <span className="text-lg font-semibold text-sidebar-foreground group-hover:text-sidebar-primary transition-colors">
-            FinChain
-          </span>
+      <div className="flex h-16 items-center border-b border-sidebar-border px-4">
+        <Link href="/" className="group w-full flex items-center justify-center">
+          <div className="w-full max-w-[200px]">
+            <Logo size="sm" showText={true} />
+          </div>
         </Link>
       </div>
 

@@ -98,7 +98,7 @@ export function AuthModal() {
               <Shield className="h-8 w-8 text-primary" />
             </motion.div>
             <h2 className="text-2xl font-bold text-foreground">Welcome Back</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Sign in to access your FinChain dashboard</p>
+            <p className="mt-1 text-sm text-muted-foreground">Sign in to access your Forge Finance dashboard</p>
           </div>
 
           {/* Tabs */}

@@ -7,9 +7,9 @@ import { Check, Loader2, Play } from "lucide-react"
 const solidityCode = `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract FinChainToken {
-    string public name = "FinChain";
-    string public symbol = "FNC";
+contract ForgeFinanceToken {
+    string public name = "Forge Finance";
+    string public symbol = "FORGE";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     
@@ -135,7 +135,7 @@ export function CodePreview() {
             <span className="h-3 w-3 rounded-full bg-yellow-500" />
             <span className="h-3 w-3 rounded-full bg-green-500" />
           </div>
-          <span className="ml-2 text-xs text-muted-foreground">FinChainToken.sol</span>
+          <span className="ml-2 text-xs text-muted-foreground">ForgeFinanceToken.sol</span>
         </div>
         <div className={`flex items-center gap-1.5 text-xs ${getStatusColor()}`}>
           {getStatusIcon()}

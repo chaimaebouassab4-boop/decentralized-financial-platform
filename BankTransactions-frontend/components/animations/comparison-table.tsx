@@ -24,7 +24,7 @@ export function ComparisonTable() {
       <div className="grid grid-cols-3 border-b border-border bg-secondary/30 px-4 py-4 text-sm font-medium">
         <div className="text-muted-foreground">Feature</div>
         <div className="text-center text-muted-foreground">Traditional Finance</div>
-        <div className="text-center text-primary">DeFi (FinChain)</div>
+        <div className="text-center text-primary">DeFi (Forge Finance)</div>
       </div>
 
       {/* Rows */}

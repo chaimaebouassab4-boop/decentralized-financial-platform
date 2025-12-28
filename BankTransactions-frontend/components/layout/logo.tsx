@@ -19,8 +19,8 @@ export function Logo({ className = "", showText = true, size = "md" }: LogoProps
     lg: "h-32 w-auto"
   }
   
-  const textColor = isDark ? "#FFFFFF" : "#1A1F3A"
-  const subtitleColor = isDark ? "#FFFFFF" : "#666"
+  const textColor = isDark ? "#FFFFFF" : "#000000"
+  const subtitleColor = isDark ? "#FFFFFF" : "#000000"
   const taglineColor = isDark ? "#FFFFFF" : "#999"
 
   return (

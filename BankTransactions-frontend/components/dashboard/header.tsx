@@ -94,7 +94,7 @@ export function DashboardHeader() {
             </DropdownMenuItem>
             <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
               <span className="text-sm font-medium">Smart Contract Deployed</span>
-              <span className="text-xs text-muted-foreground">FinChainToken deployed successfully</span>
+              <span className="text-xs text-muted-foreground">ForgeFinanceToken deployed successfully</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
               <span className="text-sm font-medium">Security Alert</span>
