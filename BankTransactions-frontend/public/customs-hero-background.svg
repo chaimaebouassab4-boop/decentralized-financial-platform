@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f0fdfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fffe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.05" />
+    </linearGradient>
+    
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0.03" />
+    </linearGradient>
+    
+    <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#14b8a6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0" />
+    </linearGradient>
+    
+    <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0" />
+    </linearGradient>
+    
+    <radialGradient id="orbGlow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.2" />
+      <stop offset="70%" style="stop-color:#14b8a6;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="orbGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.15" />
+      <stop offset="70%" style="stop-color:#06b6d4;stop-opacity:0.03" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Pattern for grid -->
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#14b8a6" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+    
+    <!-- Hexagon pattern -->
+    <pattern id="hexPattern" width="100" height="86.6" patternUnits="userSpaceOnUse">
+      <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="#14b8a6" stroke-width="0.3" opacity="0.06"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  
+  <!-- Large gradient orbs -->
+  <ellipse cx="200" cy="150" rx="400" ry="350" fill="url(#orbGlow1)" filter="url(#softGlow)"/>
+  <ellipse cx="1700" cy="200" rx="350" ry="300" fill="url(#orbGlow2)" filter="url(#softGlow)"/>
+  <ellipse cx="1000" cy="900" rx="500" ry="400" fill="url(#orbGlow1)" filter="url(#softGlow)" opacity="0.6"/>
+  <ellipse cx="300" cy="800" rx="300" ry="250" fill="url(#orbGlow2)" filter="url(#softGlow)" opacity="0.5"/>
+  <ellipse cx="1600" cy="700" rx="350" ry="300" fill="url(#orbGlow1)" filter="url(#softGlow)" opacity="0.4"/>
+  
+  <!-- Grid overlay (fades out from center) -->
+  <g opacity="0.5">
+    <rect width="100%" height="100%" fill="url(#grid)" mask="url(#gridMask)"/>
+  </g>
+  
+  <!-- Decorative geometric shapes -->
+  <!-- Top left corner decoration -->
+  <g opacity="0.15">
+    <circle cx="100" cy="100" r="150" fill="none" stroke="#14b8a6" stroke-width="1"/>
+    <circle cx="100" cy="100" r="100" fill="none" stroke="#14b8a6" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="50" fill="none" stroke="#14b8a6" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Top right corner decoration -->
+  <g opacity="0.12">
+    <circle cx="1820" cy="150" r="120" fill="none" stroke="#06b6d4" stroke-width="1"/>
+    <circle cx="1820" cy="150" r="80" fill="none" stroke="#06b6d4" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Flowing curves -->
+  <g opacity="0.1">
+    <path d="M0,400 Q400,350 800,450 T1600,400 T1920,350" fill="none" stroke="url(#lineGradient1)" stroke-width="2"/>
+    <path d="M0,500 Q500,450 1000,550 T1920,480" fill="none" stroke="url(#lineGradient1)" stroke-width="1.5"/>
+    <path d="M0,600 Q600,550 1200,650 T1920,580" fill="none" stroke="url(#lineGradient1)" stroke-width="1"/>
+  </g>
+  
+  <!-- Blockchain network nodes and connections -->
+  <g filter="url(#glow)">
+    <!-- Connection lines -->
+    <line x1="250" y1="200" x2="450" y2="350" stroke="#14b8a6" stroke-width="1" opacity="0.2"/>
+    <line x1="450" y1="350" x2="700" y2="280" stroke="#14b8a6" stroke-width="1" opacity="0.15"/>
+    <line x1="700" y1="280" x2="950" y2="400" stroke="#14b8a6" stroke-width="1" opacity="0.2"/>
+    <line x1="450" y1="350" x2="600" y2="550" stroke="#06b6d4" stroke-width="1" opacity="0.15"/>
+    <line x1="600" y1="550" x2="850" y2="480" stroke="#06b6d4" stroke-width="1" opacity="0.12"/>
+    
+    <line x1="1200" y1="150" x2="1400" y2="300" stroke="#14b8a6" stroke-width="1" opacity="0.18"/>
+    <line x1="1400" y1="300" x2="1650" y2="250" stroke="#14b8a6" stroke-width="1" opacity="0.15"/>
+    <line x1="1400" y1="300" x2="1500" y2="500" stroke="#06b6d4" stroke-width="1" opacity="0.12"/>
+    <line x1="1500" y1="500" x2="1750" y2="450" stroke="#06b6d4" stroke-width="1" opacity="0.1"/>
+    
+    <line x1="300" y1="700" x2="500" y2="800" stroke="#14b8a6" stroke-width="1" opacity="0.15"/>
+    <line x1="500" y1="800" x2="750" y2="720" stroke="#14b8a6" stroke-width="1" opacity="0.12"/>
+    <line x1="750" y1="720" x2="950" y2="850" stroke="#06b6d4" stroke-width="1" opacity="0.1"/>
+    
+    <line x1="1300" y1="650" x2="1550" y2="750" stroke="#14b8a6" stroke-width="1" opacity="0.12"/>
+    <line x1="1550" y1="750" x2="1800" y2="680" stroke="#06b6d4" stroke-width="1" opacity="0.1"/>
+  </g>
+  
+  <!-- Network nodes -->
+  <g>
+    <!-- Top left cluster -->
+    <circle cx="250" cy="200" r="6" fill="#14b8a6" opacity="0.4"/>
+    <circle cx="250" cy="200" r="12" fill="url(#nodeGlow)" opacity="0.3"/>
+    
+    <circle cx="450" cy="350" r="8" fill="#14b8a6" opacity="0.5"/>
+    <circle cx="450" cy="350" r="16" fill="url(#nodeGlow)" opacity="0.3"/>
+    
+    <circle cx="700" cy="280" r="5" fill="#06b6d4" opacity="0.4"/>
+    <circle cx="700" cy="280" r="10" fill="url(#nodeGlow)" opacity="0.25"/>
+    
+    <circle cx="950" cy="400" r="7" fill="#14b8a6" opacity="0.45"/>
+    <circle cx="950" cy="400" r="14" fill="url(#nodeGlow)" opacity="0.3"/>
+    
+    <circle cx="600" cy="550" r="5" fill="#06b6d4" opacity="0.35"/>
+    <circle cx="600" cy="550" r="10" fill="url(#nodeGlow)" opacity="0.2"/>
+    
+    <circle cx="850" cy="480" r="4" fill="#14b8a6" opacity="0.3"/>
+    
+    <!-- Top right cluster -->
+    <circle cx="1200" cy="150" r="6" fill="#14b8a6" opacity="0.4"/>
+    <circle cx="1200" cy="150" r="12" fill="url(#nodeGlow)" opacity="0.25"/>
+    
+    <circle cx="1400" cy="300" r="9" fill="#14b8a6" opacity="0.5"/>
+    <circle cx="1400" cy="300" r="18" fill="url(#nodeGlow)" opacity="0.3"/>
+    
+    <circle cx="1650" cy="250" r="5" fill="#06b6d4" opacity="0.35"/>
+    <circle cx="1650" cy="250" r="10" fill="url(#nodeGlow)" opacity="0.2"/>
+    
+    <circle cx="1500" cy="500" r="6" fill="#06b6d4" opacity="0.4"/>
+    <circle cx="1500" cy="500" r="12" fill="url(#nodeGlow)" opacity="0.25"/>
+    
+    <circle cx="1750" cy="450" r="4" fill="#14b8a6" opacity="0.3"/>
+    
+    <!-- Bottom left cluster -->
+    <circle cx="300" cy="700" r="5" fill="#14b8a6" opacity="0.35"/>
+    <circle cx="300" cy="700" r="10" fill="url(#nodeGlow)" opacity="0.2"/>
+    
+    <circle cx="500" cy="800" r="7" fill="#14b8a6" opacity="0.4"/>
+    <circle cx="500" cy="800" r="14" fill="url(#nodeGlow)" opacity="0.25"/>
+    
+    <circle cx="750" cy="720" r="5" fill="#06b6d4" opacity="0.35"/>
+    <circle cx="750" cy="720" r="10" fill="url(#nodeGlow)" opacity="0.2"/>
+    
+    <circle cx="950" cy="850" r="4" fill="#06b6d4" opacity="0.3"/>
+    
+    <!-- Bottom right cluster -->
+    <circle cx="1300" cy="650" r="5" fill="#14b8a6" opacity="0.35"/>
+    <circle cx="1300" cy="650" r="10" fill="url(#nodeGlow)" opacity="0.2"/>
+    
+    <circle cx="1550" cy="750" r="6" fill="#14b8a6" opacity="0.4"/>
+    <circle cx="1550" cy="750" r="12" fill="url(#nodeGlow)" opacity="0.25"/>
+    
+    <circle cx="1800" cy="680" r="4" fill="#06b6d4" opacity="0.3"/>
+    
+    <!-- Scattered accent nodes -->
+    <circle cx="150" cy="450" r="3" fill="#14b8a6" opacity="0.25"/>
+    <circle cx="1100" cy="600" r="4" fill="#06b6d4" opacity="0.3"/>
+    <circle cx="1850" cy="350" r="3" fill="#14b8a6" opacity="0.25"/>
+    <circle cx="100" cy="650" r="3" fill="#06b6d4" opacity="0.2"/>
+    <circle cx="1000" cy="150" r="3" fill="#14b8a6" opacity="0.25"/>
+    <circle cx="550" cy="150" r="4" fill="#06b6d4" opacity="0.3"/>
+  </g>
+  
+  <!-- Hexagonal decorative elements -->
+  <g opacity="0.08">
+    <polygon points="1750,100 1790,123 1790,169 1750,192 1710,169 1710,123" fill="none" stroke="#14b8a6" stroke-width="1.5"/>
+    <polygon points="1750,100 1780,117 1780,151 1750,168 1720,151 1720,117" fill="none" stroke="#14b8a6" stroke-width="1"/>
+    
+    <polygon points="120,550 160,573 160,619 120,642 80,619 80,573" fill="none" stroke="#06b6d4" stroke-width="1.5"/>
+    <polygon points="120,550 150,567 150,601 120,618 90,601 90,567" fill="none" stroke="#06b6d4" stroke-width="1"/>
+  </g>
+  
+  <!-- Abstract circuit-like paths -->
+  <g opacity="0.06">
+    <path d="M0,300 L100,300 L100,250 L200,250 L200,300 L300,300" fill="none" stroke="#14b8a6" stroke-width="2"/>
+    <path d="M1620,100 L1720,100 L1720,180 L1820,180 L1820,100 L1920,100" fill="none" stroke="#14b8a6" stroke-width="2"/>
+    <path d="M0,800 L80,800 L80,850 L160,850 L160,800 L240,800" fill="none" stroke="#06b6d4" stroke-width="2"/>
+    <path d="M1680,900 L1760,900 L1760,950 L1840,950 L1840,900 L1920,900" fill="none" stroke="#06b6d4" stroke-width="2"/>
+  </g>
+  
+  <!-- Subtle dot pattern in corners -->
+  <g opacity="0.15">
+    <circle cx="50" cy="50" r="2" fill="#14b8a6"/>
+    <circle cx="90" cy="50" r="2" fill="#14b8a6"/>
+    <circle cx="130" cy="50" r="2" fill="#14b8a6"/>
+    <circle cx="50" cy="90" r="2" fill="#14b8a6"/>
+    <circle cx="90" cy="90" r="2" fill="#14b8a6"/>
+    <circle cx="130" cy="90" r="2" fill="#14b8a6"/>
+    
+    <circle cx="1790" cy="50" r="2" fill="#06b6d4"/>
+    <circle cx="1830" cy="50" r="2" fill="#06b6d4"/>
+    <circle cx="1870" cy="50" r="2" fill="#06b6d4"/>
+    <circle cx="1790" cy="90" r="2" fill="#06b6d4"/>
+    <circle cx="1830" cy="90" r="2" fill="#06b6d4"/>
+    <circle cx="1870" cy="90" r="2" fill="#06b6d4"/>
+  </g>
+  
+  <!-- Gradient overlay for depth -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" opacity="0.3"/>
+  
+  <!-- Vignette effect -->
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:white;stop-opacity:0.4" />
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#vignette)"/>
+</svg>

@@ -1,55 +1,80 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp, TrendingDown, Wallet, ArrowLeftRight, Blocks, DollarSign } from "lucide-react"
+import {
+  TrendingUp,
+  TrendingDown,
+  FileText,
+  FileSearch,
+  CheckCircle2,
+  Blocks,
+  AlertTriangle,
+  FileCheck2,
+} from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const stats = [
   {
-    title: "Total Balance",
-    value: "$124,582.00",
-    change: "+12.5%",
+    title: "Total Declarations",
+    value: "3,247",
+    change: "+9.6%",
     trend: "up",
-    icon: Wallet,
-    description: "Across all wallets",
+    icon: FileText,
+    description: "This year",
   },
   {
-    title: "Transactions",
-    value: "2,847",
-    change: "+8.2%",
-    trend: "up",
-    icon: ArrowLeftRight,
-    description: "This month",
-  },
-  {
-    title: "Gas Spent",
-    value: "1.24 ETH",
-    change: "-3.1%",
+    title: "Pending Verifications",
+    value: "342",
+    change: "-4.1%",
     trend: "down",
-    icon: DollarSign,
-    description: "Last 30 days",
+    icon: FileSearch,
+    description: "Awaiting review",
   },
   {
-    title: "Blocks Verified",
-    value: "12,456",
-    change: "+24.8%",
+    title: "Validated Transactions",
+    value: "5,642",
+    change: "+12.3%",
+    trend: "up",
+    icon: CheckCircle2,
+    description: "Duties & taxes settled",
+  },
+  {
+    title: "Blockchain Records",
+    value: "21,642",
+    change: "+18.7%",
     trend: "up",
     icon: Blocks,
-    description: "Total verified",
+    description: "Anchored on-chain",
+  },
+  {
+    title: "High Risk Cases",
+    value: "244",
+    change: "-2.8%",
+    trend: "down",
+    icon: AlertTriangle,
+    description: "Red channel",
+  },
+  {
+    title: "Documents Processed",
+    value: "4,218",
+    change: "+7.4%",
+    trend: "up",
+    icon: FileCheck2,
+    description: "Hashed & verified",
   },
 ]
 
 export function StatsCards() {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {stats.map((stat, index) => (
         <motion.div
           key={stat.title}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 }}
+          transition={{ delay: index * 0.08 }}
         >
-          <Card className="relative overflow-hidden">
+          <Card className="relative h-full overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">{stat.title}</CardTitle>
               <stat.icon className="h-4 w-4 text-muted-foreground" />
@@ -60,9 +85,9 @@ export function StatsCards() {
                 {stat.trend === "up" ? (
                   <TrendingUp className="h-3 w-3 text-green-500" />
                 ) : (
-                  <TrendingDown className="h-3 w-3 text-red-500" />
+                  <TrendingDown className="h-3 w-3 text-emerald-500" />
                 )}
-                <span className={`text-xs font-medium ${stat.trend === "up" ? "text-green-500" : "text-red-500"}`}>
+                <span className={`text-xs font-medium ${stat.trend === "up" ? "text-green-500" : "text-emerald-500"}`}>
                   {stat.change}
                 </span>
                 <span className="text-xs text-muted-foreground">{stat.description}</span>

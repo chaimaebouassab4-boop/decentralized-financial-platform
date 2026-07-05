@@ -49,19 +49,19 @@ export function CtaSection() {
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-4 py-1.5"
             >
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm text-primary">Start Building Today</span>
+              <span className="text-sm text-primary">Customs Digitalization Demo</span>
             </motion.div>
 
             <MotionWrapper delay={0.1}>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-                Ready to Get Started?
+                Ready to Modernize Customs Operations?
               </h2>
             </MotionWrapper>
 
             <MotionWrapper delay={0.2}>
               <p className="mt-4 text-lg text-muted-foreground text-pretty">
-                Join thousands of users already experiencing the future of decentralized finance. Launch the platform or
-                explore our documentation.
+                Explore the full clearance workflow — declarations, document verification, duty
+                payments and blockchain traceability — in the live dashboard.
               </p>
             </MotionWrapper>
 
@@ -71,7 +71,7 @@ export function CtaSection() {
                 <Link href="/dashboard">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button size="lg" className="gap-2 w-full sm:w-auto group">
-                      Launch Platform
+                      Open Dashboard
                       <motion.span
                         animate={{ x: [0, 4, 0] }}
                         transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
@@ -81,16 +81,18 @@ export function CtaSection() {
                     </Button>
                   </motion.div>
                 </Link>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="gap-2 w-full sm:w-auto bg-transparent backdrop-blur-sm"
-                  >
-                    <FileText className="h-4 w-4" />
-                    View Documentation
-                  </Button>
-                </motion.div>
+                <Link href="/declarations">
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="gap-2 w-full sm:w-auto bg-transparent backdrop-blur-sm"
+                    >
+                      <FileText className="h-4 w-4" />
+                      Browse Declarations
+                    </Button>
+                  </motion.div>
+                </Link>
               </div>
             </MotionWrapper>
           </div>

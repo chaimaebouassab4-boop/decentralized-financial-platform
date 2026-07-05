@@ -2,112 +2,113 @@
 
 import { motion } from "framer-motion"
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrapper"
-import { 
-  Send, 
-  ArrowLeftRight, 
-  Landmark, 
-  Coins,
+import {
+  Landmark,
+  FileText,
+  FileCheck2,
   FileCode2,
   TrendingUp,
   Wallet,
   History,
-  PieChart,
+  Gauge,
   Lock,
   Zap,
-  Globe
+  Globe,
+  Link2,
+  BadgeCheck,
 } from "lucide-react"
 import { useState } from "react"
 
 const serviceCategories = [
   {
-    id: "traditional",
-    label: "Traditional Banking",
+    id: "declarations",
+    label: "Declarations & Clearance",
     icon: Landmark,
-    color: "#10b981",
+    color: "#14b8a6",
     services: [
       {
-        icon: Send,
-        title: "Bank Transfers",
-        description: "Send money instantly between accounts with real-time confirmation and tracking.",
-        action: "Transfer Now"
+        icon: FileText,
+        title: "Electronic Declarations",
+        description: "File customs declarations digitally with goods details, HS codes and customs values.",
+        action: "Open Declarations"
       },
       {
-        icon: ArrowLeftRight,
-        title: "Payment Processing",
-        description: "Process payments securely with multiple payment methods and currencies.",
-        action: "Make Payment"
+        icon: FileCheck2,
+        title: "Document Verification",
+        description: "Upload invoices, certificates and bills of lading — each hashed and verified automatically.",
+        action: "Verify Documents"
       },
       {
-        icon: History,
-        title: "Transaction History",
-        description: "Complete audit trail of all your financial activities with export options.",
-        action: "View History"
+        icon: BadgeCheck,
+        title: "Clearance Tracking",
+        description: "Follow every declaration from submission to final clearance certificate in real time.",
+        action: "Track Clearance"
       },
     ]
   },
   {
     id: "blockchain",
-    label: "Blockchain & Web3",
-    icon: Coins,
-    color: "#8b5cf6",
+    label: "Blockchain & Smart Contracts",
+    icon: Link2,
+    color: "#3b82f6",
     services: [
       {
         icon: Wallet,
         title: "Wallet Connection",
-        description: "Connect MetaMask to interact with Ethereum and manage your crypto assets.",
+        description: "Connect MetaMask to sign customs operations and settle duties on the blockchain.",
         action: "Connect Wallet"
       },
       {
         icon: FileCode2,
-        title: "Smart Contracts",
-        description: "Execute Solidity contracts for staking, token swaps, and automated payments.",
-        action: "Execute Contract"
+        title: "Smart Contract Execution",
+        description: "DeclarationRegistry, DocumentNotary and DutyPayment contracts automate the clearance chain.",
+        action: "View Contracts"
       },
       {
-        icon: Coins,
-        title: "Token Staking",
-        description: "Stake your tokens and earn rewards through our verified smart contracts.",
-        action: "Start Staking"
+        icon: History,
+        title: "On-chain Traceability",
+        description: "Every customs event is anchored with a transaction hash, block number and timestamp.",
+        action: "Explore Records"
       },
     ]
   },
   {
-    id: "analytics",
-    label: "Analytics & Insights",
+    id: "risk",
+    label: "Risk & Analytics",
     icon: TrendingUp,
-    color: "#06b6d4",
+    color: "#f59e0b",
     services: [
       {
-        icon: PieChart,
-        title: "Portfolio Overview",
-        description: "Unified view of your traditional and crypto assets in real-time dashboards.",
-        action: "View Portfolio"
+        icon: Gauge,
+        title: "Risk Scoring",
+        description: "Automated 0–100 risk score per declaration with green, orange and red channel routing.",
+        action: "Analyze Risk"
       },
       {
         icon: TrendingUp,
-        title: "Financial Trends",
-        description: "AI-powered insights on spending patterns and investment opportunities.",
-        action: "See Insights"
+        title: "Operational Dashboards",
+        description: "Monitor declaration volumes, duty collection and clearance times in live dashboards.",
+        action: "Open Dashboard"
       },
       {
         icon: History,
-        title: "Blockchain Explorer",
-        description: "Track your on-chain transactions with detailed analytics and gas insights.",
-        action: "Explore Chain"
+        title: "Audit & Reporting",
+        description: "Complete immutable history of operations for inspections and compliance reporting.",
+        action: "View Reports"
       },
     ]
   },
 ]
 
 const platformHighlights = [
-  { icon: Lock, label: "OAuth2 & JWT Security" },
+  { icon: Lock, label: "Role-based Secure Access" },
   { icon: Zap, label: "Real-time Processing" },
-  { icon: Globe, label: "AWS Cloud Native" },
+  { icon: Globe, label: "Cloud-native Microservices" },
 ]
 
 // Keep the same export name for backward compatibility
 export function TechStackSection() {
-  const [activeCategory, setActiveCategory] = useState("traditional")
+  const [activeCategory, setActiveCategory] = useState("declarations")
   const activeData = serviceCategories.find(c => c.id === activeCategory)!
 
   return (
@@ -143,10 +144,10 @@ export function TechStackSection() {
             Platform Services
           </motion.span>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-            Everything You Need in One Platform
+            Every Customs Operation in One Place
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            From traditional banking to blockchain transactions—manage all your financial operations seamlessly.
+            From electronic declarations to blockchain-anchored clearance — manage the full customs lifecycle seamlessly.
           </p>
         </motion.div>
 

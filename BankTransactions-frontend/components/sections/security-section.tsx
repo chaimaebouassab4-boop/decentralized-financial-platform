@@ -7,26 +7,26 @@ import { MotionWrapper, StaggerContainer, StaggerItem } from "@/components/anima
 const securityFeatures = [
   {
     icon: Lock,
-    title: "Secure Authentication",
-    description: "Multi-factor authentication and secure wallet connections protect your account.",
+    title: "Role-based Access Control",
+    description: "Customs officers, importers and brokers each get scoped permissions with secure authentication and wallet binding.",
   },
   {
     icon: Eye,
-    title: "Blockchain Transparency",
-    description: "Every transaction is recorded on the blockchain for complete auditability.",
+    title: "Immutable Audit Trail",
+    description: "Every declaration, verification and payment is anchored on the blockchain for complete auditability.",
   },
   {
     icon: Server,
-    title: "Cloud Security",
-    description: "Enterprise-grade AWS security with encryption at rest and in transit.",
+    title: "Secure Infrastructure",
+    description: "Cloud-native microservices with encryption at rest and in transit protect sensitive trade data.",
   },
 ]
 
 const securityChecklist = [
-  "End-to-end encryption for all data",
-  "Smart contract audits by leading firms",
-  "24/7 monitoring and threat detection",
-  "Regulatory compliance (SOC 2, GDPR)",
+  "SHA-256 hashing of every trade document",
+  "Smart contract–verified clearance certificates",
+  "24/7 monitoring of declarations and payments",
+  "Aligned with WCO SAFE framework & data-protection rules",
 ]
 
 export function SecuritySection() {
@@ -37,11 +37,11 @@ export function SecuritySection() {
           {/* Content */}
           <MotionWrapper direction="left">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Security & Trust
+              Security & Institutional Trust
             </h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed text-pretty">
-              Your security is our top priority. We implement industry-leading security measures to protect your assets
-              and data at every level.
+              Customs data is critical national infrastructure. The platform combines cryptographic
+              verification with blockchain immutability to protect every declaration, document and payment.
             </p>
 
             {/* Security Checklist */}

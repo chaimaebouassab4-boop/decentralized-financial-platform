@@ -4,21 +4,21 @@ import { Logo } from "@/components/layout/logo"
 const footerLinks = {
   platform: [
     { href: "/dashboard", label: "Dashboard" },
+    { href: "/declarations", label: "Declarations" },
     { href: "/transactions", label: "Transactions" },
     { href: "/blockchain", label: "Blockchain" },
-    { href: "/auth", label: "Authentication" },
+  ],
+  modules: [
+    { href: "/documents", label: "Document Verification" },
+    { href: "/risk-analysis", label: "Risk Analysis" },
+    { href: "/blockchain", label: "Smart Contracts" },
+    { href: "/auth", label: "Access & Login" },
   ],
   resources: [
-    { href: "#", label: "Documentation" },
+    { href: "#", label: "User Guide" },
     { href: "#", label: "API Reference" },
-    { href: "#", label: "Smart Contracts" },
-    { href: "#", label: "Security" },
-  ],
-  company: [
-    { href: "#", label: "About" },
-    { href: "#", label: "Blog" },
-    { href: "#", label: "Careers" },
-    { href: "#", label: "Contact" },
+    { href: "#", label: "WCO Data Model" },
+    { href: "#", label: "Contact Support" },
   ],
 }
 
@@ -33,7 +33,8 @@ export function Footer() {
               <Logo size="sm" showText={true} />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Decentralized financial services powered by blockchain technology and modern cloud infrastructure.
+              Digital customs declarations, secure trade transactions, blockchain traceability, and
+              smart contract verification unified in one platform.
             </p>
           </div>
 
@@ -42,7 +43,24 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold text-foreground">Platform</h3>
             <ul className="space-y-3">
               {footerLinks.platform.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Modules Links */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold text-foreground">Modules</h3>
+            <ul className="space-y-3">
+              {footerLinks.modules.map((link) => (
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -58,25 +76,8 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-sm font-semibold text-foreground">Resources</h3>
             <ul className="space-y-3">
-        {footerLinks.resources.map((link, index) => (
-  <li key={`${link.href}-${index}`}>
-    <Link
-      href={link.href}
-      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-    >
-      {link.label}
-    </Link>
-  </li>
-))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h3 className="mb-4 text-sm font-semibold text-foreground">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-  <li key={`${link.href}-${index}`}>
+              {footerLinks.resources.map((link) => (
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -91,7 +92,9 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground dark:text-white">© {new Date().getFullYear()} Forge Finance. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} DouaneChain — Digital Customs Blockchain Platform. Final Year Project (PFE).
+          </p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
               Privacy Policy

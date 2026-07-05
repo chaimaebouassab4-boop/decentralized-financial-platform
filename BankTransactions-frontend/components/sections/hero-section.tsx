@@ -4,12 +4,24 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Wallet, Shield, Zap, TrendingUp, Lock, Activity } from "lucide-react"
-import { TypingText } from "@/components/animations/typing-text"
+import {
+  ArrowRight,
+  Wallet,
+  FileCheck2,
+  FileCode2,
+  Link2,
+  Gauge,
+  Activity,
+  FileText,
+  Blocks,
+  ShieldCheck,
+  Timer,
+} from "lucide-react"
 import { BlockchainVisualization } from "@/components/animations/blockchain-visualization"
 import { Counter } from "@/components/animations/counter"
 import { MotionWrapper } from "@/components/animations/motion-wrapper"
 import { Logo } from "@/components/layout/logo"
+import { useWallet } from "@/hooks/use-wallet"
 
 // Animated Network Background Component (Canvas overlay for extra dynamism)
 function NetworkBackground() {
@@ -40,7 +52,7 @@ function NetworkBackground() {
     const createParticles = () => {
       particles = []
       const particleCount = Math.min(35, Math.floor(window.innerWidth / 40))
-      
+
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -139,7 +151,7 @@ function FloatingOrbs() {
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
-      
+
       {/* Cyan orb - top right */}
       <motion.div
         className="absolute rounded-full"
@@ -158,7 +170,7 @@ function FloatingOrbs() {
         }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
-      
+
       {/* Bottom center orb */}
       <motion.div
         className="absolute rounded-full"
@@ -180,8 +192,24 @@ function FloatingOrbs() {
   )
 }
 
+const featureBadges = [
+  { icon: Link2, label: "Blockchain Traceability" },
+  { icon: FileCode2, label: "Smart Contracts" },
+  { icon: FileCheck2, label: "Document Verification" },
+  { icon: Gauge, label: "Risk Scoring" },
+  { icon: Activity, label: "Real-time Monitoring" },
+]
+
+const heroStats = [
+  { value: 3.2, suffix: "K+", prefix: "", label: "Declarations Processed", icon: FileText, decimals: 1 },
+  { value: 21, suffix: "K+", prefix: "", label: "On-chain Records", icon: Blocks, decimals: 0 },
+  { value: 98.7, suffix: "%", prefix: "", label: "Verification Accuracy", icon: ShieldCheck, decimals: 1 },
+  { value: 4, suffix: "h", prefix: "<", label: "Avg. Clearance Time", icon: Timer, decimals: 0 },
+]
+
 export function HeroSection() {
   const [mounted, setMounted] = useState(false)
+  const { isConnected, isConnecting, shortAddress, connect } = useWallet()
 
   useEffect(() => {
     setMounted(true)
@@ -189,43 +217,43 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-32">
-      {/* ========== PREMIUM BACKGROUND SYSTEM ========== */}
+      {/* ========== BACKGROUND SYSTEM ========== */}
       <div className="absolute inset-0 -z-10">
         {/* SVG Background Image - The main visual */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
-backgroundImage: `url('/Forge-hero-background.svg')`,
+            backgroundImage: `url('/customs-hero-background.svg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}
         />
-        
+
         {/* Fallback gradient (shows while SVG loads or if it fails) */}
-        <div 
+        <div
           className="absolute inset-0 -z-[1]"
           style={{
             background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(170, 60%, 98%) 50%, hsl(var(--background)) 100%)'
           }}
         />
-        
+
         {/* Animated canvas overlay for dynamic particles */}
         <NetworkBackground />
-        
+
         {/* Floating gradient orbs for subtle motion */}
         <FloatingOrbs />
-        
+
         {/* Top fade for navbar blend */}
-        <div 
+        <div
           className="absolute top-0 left-0 right-0 h-32 z-[3]"
           style={{
             background: 'linear-gradient(to bottom, hsl(var(--background)) 0%, transparent 100%)'
           }}
         />
-        
+
         {/* Bottom fade */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 h-48 z-[3]"
           style={{
             background: 'linear-gradient(to top, hsl(var(--background)) 0%, transparent 100%)'
@@ -250,20 +278,16 @@ backgroundImage: `url('/Forge-hero-background.svg')`,
                 animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <span className="text-sm font-medium text-foreground">Web3 + Traditional Finance</span>
+              <span className="text-sm font-medium text-foreground">
+                Blockchain-powered Customs Digitalization
+              </span>
             </div>
           </MotionWrapper>
 
-          {/* Headline with typing effect */}
+          {/* Headline */}
           <MotionWrapper delay={0.1}>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
-              <span className="text-gradient">
-                <TypingText
-                  texts={["Payments", "Transfers", "Staking", "Smart Contracts"]}
-                  speed={80}
-                  pauseDuration={2500}
-                />
-              </span>
+              <span className="text-gradient">Digital Customs Operations</span>
               <br />
               <span className="text-foreground">Unified in One Platform</span>
             </h1>
@@ -272,24 +296,20 @@ backgroundImage: `url('/Forge-hero-background.svg')`,
           {/* Subtitle */}
           <MotionWrapper delay={0.2}>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed sm:text-xl text-pretty max-w-2xl mx-auto">
-              Connect your MetaMask wallet, execute Ethereum smart contracts, and manage traditional 
-              banking—all powered by microservices and deployed on AWS.
+              Manage customs declarations, verify documents, track transactions, and secure
+              international trade flows using blockchain-based traceability.
             </p>
           </MotionWrapper>
 
-          {/* Feature pills - Professional icons */}
+          {/* Feature badges */}
           <MotionWrapper delay={0.25}>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              {[
-                { icon: Wallet, label: "MetaMask Ready" },
-                { icon: Lock, label: "OAuth2 Secured" },
-                { icon: Activity, label: "Real-time" },
-              ].map((item, i) => (
+              {featureBadges.map((item, i) => (
                 <motion.div
                   key={item.label}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 10 }}
-                  transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                  transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
                   whileHover={{ y: -2, transition: { duration: 0.2 } }}
                   className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-background/90 backdrop-blur-sm border border-border/60 text-sm font-medium text-muted-foreground shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
                 >
@@ -305,20 +325,20 @@ backgroundImage: `url('/Forge-hero-background.svg')`,
           {/* CTA Buttons */}
           <MotionWrapper delay={0.3}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/auth">
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button 
-                    size="lg" 
-                    className="gap-2 w-full sm:w-auto relative overflow-hidden group bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 shadow-lg shadow-primary/25 px-8"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      <Wallet className="h-5 w-5" />
-                      Connect Wallet
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                  </Button>
-                </motion.div>
-              </Link>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  size="lg"
+                  onClick={connect}
+                  disabled={isConnecting}
+                  className="gap-2 w-full sm:w-auto relative overflow-hidden group bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 shadow-lg shadow-primary/25 px-8"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <Wallet className="h-5 w-5" />
+                    {isConnected ? `Connected — ${shortAddress}` : isConnecting ? "Connecting..." : "Connect Wallet"}
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                </Button>
+              </motion.div>
               <Link href="/dashboard">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
@@ -326,7 +346,7 @@ backgroundImage: `url('/Forge-hero-background.svg')`,
                     size="lg"
                     className="gap-2 w-full sm:w-auto bg-background/90 backdrop-blur-sm group border-border/60 hover:border-primary/40 hover:bg-background px-8"
                   >
-                    View Dashboard
+                    Open Dashboard
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </motion.div>
@@ -341,30 +361,22 @@ backgroundImage: `url('/Forge-hero-background.svg')`,
 
           {/* Stats with counter animation */}
           <div className="mt-20 grid grid-cols-2 gap-6 sm:grid-cols-4">
-            {[
-              { value: 2.5, suffix: "B+", prefix: "$", label: "Transaction Volume", icon: TrendingUp },
-              { value: 150, suffix: "K+", prefix: "", label: "Active Users", icon: Wallet },
-              { value: 99.9, suffix: "%", prefix: "", label: "Uptime SLA", icon: Shield },
-              { value: 1, suffix: "s", prefix: "<", label: "Block Confirmation", icon: Zap },
-            ].map((stat, i) => (
+            {heroStats.map((stat, i) => (
               <MotionWrapper key={stat.label} delay={0.5 + i * 0.1} className="text-center">
-                <motion.div 
+                <motion.div
                   className="relative p-5 rounded-2xl bg-background/80 backdrop-blur-sm border border-border/50 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300"
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
                 >
-                  {/* Icon container */}
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-teal-500/10 flex items-center justify-center mx-auto mb-3 border border-primary/10">
                     <stat.icon className="w-5 h-5 text-primary" />
                   </div>
-                  
-                  <motion.div 
-                    className="text-2xl font-bold text-foreground sm:text-3xl" 
-                  >
+
+                  <motion.div className="text-2xl font-bold text-foreground sm:text-3xl">
                     <Counter
                       end={stat.value}
                       prefix={stat.prefix}
                       suffix={stat.suffix}
-                      decimals={stat.value % 1 !== 0 ? 1 : 0}
+                      decimals={stat.decimals}
                     />
                   </motion.div>
                   <div className="mt-1.5 text-xs text-muted-foreground font-medium tracking-wide uppercase">{stat.label}</div>
@@ -376,4 +388,4 @@ backgroundImage: `url('/Forge-hero-background.svg')`,
       </div>
     </section>
   )
-} 
+}

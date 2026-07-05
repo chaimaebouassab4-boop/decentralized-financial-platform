@@ -32,8 +32,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Check for existing session
-    const savedAuthMode = localStorage.getItem("finchain_auth_mode") as AuthMode
-    const savedUser = localStorage.getItem("finchain_user")
+    const savedAuthMode = localStorage.getItem("douanechain_auth_mode") as AuthMode
+    const savedUser = localStorage.getItem("douanechain_user")
 
     if (savedAuthMode === "guest") {
       setAuthMode("guest")
@@ -59,8 +59,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     setUser(mockUser)
     setAuthMode("authenticated")
-    localStorage.setItem("finchain_auth_mode", "authenticated")
-    localStorage.setItem("finchain_user", JSON.stringify(mockUser))
+    localStorage.setItem("douanechain_auth_mode", "authenticated")
+    localStorage.setItem("douanechain_user", JSON.stringify(mockUser))
     setIsLoading(false)
   }
 
@@ -77,8 +77,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     setUser(mockUser)
     setAuthMode("authenticated")
-    localStorage.setItem("finchain_auth_mode", "authenticated")
-    localStorage.setItem("finchain_user", JSON.stringify(mockUser))
+    localStorage.setItem("douanechain_auth_mode", "authenticated")
+    localStorage.setItem("douanechain_user", JSON.stringify(mockUser))
     setIsLoading(false)
   }
 
@@ -95,23 +95,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     setUser(mockUser)
     setAuthMode("authenticated")
-    localStorage.setItem("finchain_auth_mode", "authenticated")
-    localStorage.setItem("finchain_user", JSON.stringify(mockUser))
+    localStorage.setItem("douanechain_auth_mode", "authenticated")
+    localStorage.setItem("douanechain_user", JSON.stringify(mockUser))
     setIsLoading(false)
   }
 
   const continueAsGuest = () => {
     setAuthMode("guest")
     setUser(null)
-    localStorage.setItem("finchain_auth_mode", "guest")
-    localStorage.removeItem("finchain_user")
+    localStorage.setItem("douanechain_auth_mode", "guest")
+    localStorage.removeItem("douanechain_user")
   }
 
   const logout = () => {
     setUser(null)
     setAuthMode(null)
-    localStorage.removeItem("finchain_auth_mode")
-    localStorage.removeItem("finchain_user")
+    localStorage.removeItem("douanechain_auth_mode")
+    localStorage.removeItem("douanechain_user")
   }
 
   return (

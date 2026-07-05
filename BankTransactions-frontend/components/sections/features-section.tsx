@@ -2,73 +2,73 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { 
-  Wallet, 
-  ArrowLeftRight, 
-  FileCode2, 
-  BarChart3, 
-  Shield, 
-  Globe,
-  Zap,
-  Lock
+import {
+  FileText,
+  FileCheck2,
+  Landmark,
+  Link2,
+  Gauge,
+  Activity,
+  ShieldCheck,
+  FileCode2,
 } from "lucide-react"
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrapper"
 
 const features = [
   {
-    icon: ArrowLeftRight,
-    title: "Traditional Transactions",
+    icon: FileText,
+    title: "Digital Declarations",
     description:
-      "Manage payments, transfers, and wire transactions through our secure banking microservices with real-time processing.",
+      "Submit and track electronic customs declarations with structured data, HS codes, and full lifecycle status from filing to clearance.",
+    gradient: "from-teal-500 to-cyan-500",
+    stats: "Paperless",
+  },
+  {
+    icon: FileCheck2,
+    title: "Document Verification",
+    description:
+      "Invoices, certificates of origin and bills of lading are hashed, verified, and anchored on-chain for tamper-proof authenticity.",
+    gradient: "from-blue-500 to-indigo-500",
+    stats: "SHA-256",
+  },
+  {
+    icon: Landmark,
+    title: "Duties & Tax Payments",
+    description:
+      "Settle customs duties, import VAT and clearance fees through secure transactions with verifiable on-chain receipts.",
     gradient: "from-emerald-500 to-teal-500",
-    stats: "Real-time",
+    stats: "On-chain receipts",
   },
   {
-    icon: Wallet,
-    title: "Web3 Wallet Integration",
+    icon: Link2,
+    title: "Blockchain Traceability",
     description:
-      "Connect your MetaMask wallet to interact with Ethereum blockchain and execute decentralized transactions seamlessly.",
-    gradient: "from-orange-500 to-amber-500",
-    stats: "MetaMask",
-  },
-  {
-    icon: FileCode2,
-    title: "Smart Contracts",
-    description:
-      "Execute Solidity smart contracts for automated payments, token staking, and secure decentralized financial operations.",
-    gradient: "from-violet-500 to-purple-500",
-    stats: "Solidity",
-  },
-  {
-    icon: BarChart3,
-    title: "Financial Analytics",
-    description:
-      "Visualize transaction flows, crypto movements, and financial trends with interactive real-time dashboards.",
+      "Every customs event — declaration, verification, payment, clearance — is recorded immutably with a transaction hash and timestamp.",
     gradient: "from-cyan-500 to-blue-500",
-    stats: "Live Data",
+    stats: "Immutable",
   },
 ]
 
 const additionalFeatures = [
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "OAuth2 & JWT authentication with end-to-end encryption",
+    icon: Gauge,
+    title: "Risk Scoring Engine",
+    description: "Automated 0–100 scoring with green, orange and red channel routing",
   },
   {
-    icon: Globe,
-    title: "Microservices Architecture",
-    description: "Scalable FastAPI services with Kafka messaging",
+    icon: FileCode2,
+    title: "Smart Contract Automation",
+    description: "Solidity contracts register declarations, notarize documents and issue certificates",
   },
   {
-    icon: Zap,
-    title: "AWS Cloud Native",
-    description: "Deployed on EKS with automated CI/CD pipelines",
+    icon: Activity,
+    title: "Real-time Monitoring",
+    description: "Live dashboards for declarations, payments and blockchain activity",
   },
   {
-    icon: Lock,
-    title: "Blockchain Security",
-    description: "Immutable transactions on Ethereum network",
+    icon: ShieldCheck,
+    title: "Secure Access",
+    description: "Role-based access for customs officers, importers and brokers",
   },
 ]
 
@@ -78,7 +78,7 @@ export function FeaturesSection() {
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-        <div className="absolute top-1/2 right-0 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-1/2 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -95,20 +95,21 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-primary mb-4"
           >
-            <Zap className="w-3.5 h-3.5" />
-            Platform Capabilities
+            <Landmark className="w-3.5 h-3.5" />
+            Customs Modules
           </motion.span>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-            Complete FinTech & Web3 Solution
+            A Complete Digital Customs Solution
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty max-w-xl mx-auto">
-            Bridging traditional finance with blockchain technology for secure, transparent, and efficient financial operations.
+            Digital customs declarations, secure trade transactions, blockchain traceability, and
+            smart contract verification unified in one platform.
           </p>
         </motion.div>
 
         {/* Main Features Grid */}
         <StaggerContainer staggerDelay={0.12} className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, i) => (
+          {features.map((feature) => (
             <StaggerItem key={feature.title}>
               <motion.div
                 whileHover={{
@@ -129,9 +130,6 @@ export function FeaturesSection() {
                   <CardHeader className="pb-2">
                     <motion.div
                       className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${feature.gradient} text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl`}
-                      style={{
-                        boxShadow: `0 4px 20px rgba(0,0,0,0.1)`
-                      }}
                     >
                       <feature.icon className="h-7 w-7" />
                     </motion.div>

@@ -14,15 +14,16 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { useAuth } from "@/contexts/auth-context"
+import { useWallet } from "@/hooks/use-wallet"
 import Link from "next/link"
 
 export function DashboardHeader() {
   const { user, authMode, logout } = useAuth()
+  const { isConnected, isConnecting, shortAddress, address, connect, disconnect } = useWallet()
 
-  const isGuest = authMode === "guest"
-  const walletAddress = user?.walletAddress || "0x742d...44e8"
   const displayName = user?.name || "Guest User"
   const displayEmail = user?.email || "Demo Account"
+  const isGuest = authMode !== "authenticated"
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background/95 px-6 backdrop-blur-sm">
@@ -31,7 +32,7 @@ export function DashboardHeader() {
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           type="search"
-          placeholder="Search transactions, addresses, blocks..."
+          placeholder="Search declarations, documents, transaction hashes..."
           className="h-10 w-full bg-secondary pl-10 pr-4"
         />
       </div>
@@ -41,40 +42,41 @@ export function DashboardHeader() {
         {/* Network Status */}
         <div className="hidden items-center gap-2 rounded-full bg-secondary px-3 py-1.5 md:flex">
           <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-medium text-foreground">Ethereum Mainnet</span>
+          <span className="text-xs font-medium text-foreground">Blockchain Synced</span>
         </div>
 
-        {isGuest ? (
-          <Link href="/auth">
-            <Button size="sm" className="gap-2">
-              <Wallet className="h-4 w-4" />
-              Sign In
-            </Button>
-          </Link>
-        ) : (
+        {/* Wallet */}
+        {isConnected ? (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="gap-2 bg-secondary border-border">
                 <Wallet className="h-4 w-4 text-primary" />
-                <span className="hidden font-mono text-sm sm:inline">{walletAddress}</span>
+                <span className="hidden font-mono text-sm sm:inline">{shortAddress}</span>
                 <ChevronDown className="h-3 w-3" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>Wallet</DropdownMenuLabel>
+              <DropdownMenuLabel>Connected Wallet</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => address && navigator.clipboard.writeText(address)}>
                 <Copy className="mr-2 h-4 w-4" />
                 Copy Address
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <ExternalLink className="mr-2 h-4 w-4" />
-                View on Etherscan
+                View on Block Explorer
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-destructive">Disconnect</DropdownMenuItem>
+              <DropdownMenuItem className="text-destructive" onClick={disconnect}>
+                Disconnect
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+        ) : (
+          <Button size="sm" className="gap-2" onClick={connect} disabled={isConnecting}>
+            <Wallet className="h-4 w-4" />
+            {isConnecting ? "Connecting..." : "Connect Wallet"}
+          </Button>
         )}
 
         {/* Notifications */}
@@ -89,16 +91,16 @@ export function DashboardHeader() {
             <DropdownMenuLabel>Notifications</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
-              <span className="text-sm font-medium">Transaction Confirmed</span>
-              <span className="text-xs text-muted-foreground">0.5 ETH sent to 0x8f3...4d2</span>
+              <span className="text-sm font-medium">Clearance Certificate Issued</span>
+              <span className="text-xs text-muted-foreground">DEC-2026-00184 cleared and anchored on-chain</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
-              <span className="text-sm font-medium">Smart Contract Deployed</span>
-              <span className="text-xs text-muted-foreground">ForgeFinanceToken deployed successfully</span>
+              <span className="text-sm font-medium">High Risk Declaration Flagged</span>
+              <span className="text-xs text-muted-foreground">DEC-2026-00180 routed to red channel (score 82)</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
-              <span className="text-sm font-medium">Security Alert</span>
-              <span className="text-xs text-muted-foreground">New device login detected</span>
+              <span className="text-sm font-medium">Duty Payment Confirmed</span>
+              <span className="text-xs text-muted-foreground">460,625 MAD settled — tx 0xab12cd34...</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -108,7 +110,7 @@ export function DashboardHeader() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="flex items-center gap-2 px-2">
               <Avatar className="h-8 w-8">
-                <AvatarImage src={user?.avatar || "/placeholder.svg?height=32&width=32&query=avatar"} />
+                <AvatarImage src={user?.avatar || "/placeholder-user.jpg"} />
                 <AvatarFallback>{displayName.slice(0, 2).toUpperCase()}</AvatarFallback>
               </Avatar>
               <div className="hidden text-left md:block">
@@ -123,7 +125,6 @@ export function DashboardHeader() {
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            {!isGuest && <DropdownMenuItem>Billing</DropdownMenuItem>}
             <DropdownMenuSeparator />
             {isGuest ? (
               <DropdownMenuItem asChild>
